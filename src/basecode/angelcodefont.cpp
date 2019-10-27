@@ -370,8 +370,9 @@ void ACFont::drawstring(const char * string, float x, float y, int color, float 
 
             if (gConfig.mUseVBOs && GLEE_ARB_vertex_buffer_object)
             {
-                glDeleteBuffers(1, &lru->mVvbo);
-                glDeleteBuffers(1, &lru->mTvbo);
+                // TODO: Not found
+                //glDeleteBuffers(1, &lru->mVvbo);
+                //glDeleteBuffers(1, &lru->mTvbo);
             }
 
             lru->mCount = len * 8 - 2;
@@ -466,14 +467,16 @@ void ACFont::drawstring(const char * string, float x, float y, int color, float 
 
             if (gConfig.mUseVBOs && GLEE_ARB_vertex_buffer_object)
             {                  
-                glGenBuffers(1, &lru->mVvbo);   
-                glBindBuffer(GL_ARRAY_BUFFER, lru->mVvbo);
-                glBufferData(GL_ARRAY_BUFFER, p * sizeof(float), lru->mCoords, GL_STATIC_DRAW);
+                // TODO: Not found
+                //glGenBuffers(1, &lru->mVvbo);   
+                //glBindBuffer(GL_ARRAY_BUFFER, lru->mVvbo);
+                //glBufferData(GL_ARRAY_BUFFER, p * sizeof(float), lru->mCoords, GL_STATIC_DRAW);
                 delete[] lru->mCoords;
                 lru->mCoords = NULL;
-                glGenBuffers(1, &lru->mTvbo);   
-                glBindBuffer(GL_ARRAY_BUFFER, lru->mTvbo);
-                glBufferData(GL_ARRAY_BUFFER, p * sizeof(float), lru->mTexcoords, GL_STATIC_DRAW);
+                // TODO: Not found
+                //glGenBuffers(1, &lru->mTvbo);   
+                //glBindBuffer(GL_ARRAY_BUFFER, lru->mTvbo);
+                //glBufferData(GL_ARRAY_BUFFER, p * sizeof(float), lru->mTexcoords, GL_STATIC_DRAW);
                 delete[] lru->mTexcoords;
                 lru->mTexcoords = NULL;
             }
@@ -498,14 +501,17 @@ void ACFont::drawstring(const char * string, float x, float y, int color, float 
 
         if (gConfig.mUseVBOs && GLEE_ARB_vertex_buffer_object)
         {
-            glBindBuffer(GL_ARRAY_BUFFER, str->mVvbo);
+            // TODO: Not found
+            //glBindBuffer(GL_ARRAY_BUFFER, str->mVvbo);
             glVertexPointer(2, GL_FLOAT, 0, 0);
-            glBindBuffer(GL_ARRAY_BUFFER, str->mTvbo);
+            // TODO: Not found
+            //glBindBuffer(GL_ARRAY_BUFFER, str->mTvbo);
             glTexCoordPointer(2, GL_FLOAT, 0, 0);
 
             glDrawArrays(GL_TRIANGLE_STRIP,0,str->mCount);
 
-            glBindBuffer(GL_ARRAY_BUFFER, 0);
+            // TODO: Not found
+            //glBindBuffer(GL_ARRAY_BUFFER, 0);
         }
         else
         {
